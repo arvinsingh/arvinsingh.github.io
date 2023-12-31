@@ -1,0 +1,342 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway';
+
+
+:root {
+    --navbar-bg-color: #4CAf50;
+    --navbar-text-color: hsl(0, 0%, 95%);
+    --navbar-text-color-focus: white;
+}
+  
+/* Reset some default styles */
+body,
+h1,
+h2,
+h3,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+div.container
+{
+    font-family: Raleway;
+    margin: 0 auto;
+	padding: 10em 3em;
+	text-align: center;
+}
+
+div.container a
+{
+    color: #FFF;
+    text-decoration: none;
+    font: 20px Raleway;
+    margin: 0px 10px;
+    padding: 10px 10px;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+}
+
+/* Container Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav #logo h1 {
+    color: #fff;
+    font-size: 1.5em;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #ff9900;
+}
+
+/* Home Section Styles */
+#home {
+    text-align: center;
+    padding: 100px 0;
+    background: linear-gradient(to bottom, #4CAF50, #45a049);
+    color: #fff;
+}
+
+#home h1 {
+    font-size: 2.5em;
+}
+
+#home p {
+    margin-top: 20px;
+}
+
+/* About Me Section Styles */
+#about {
+    background-color: #fff;
+    padding: 50px 0;
+}
+
+/* Portfolio Section Styles */
+#portfolio {
+    background-color: #f5f5f5;
+    padding: 50px 0;
+}
+
+.project {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.project:hover {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project h3 {
+    color: #333;
+}
+
+/* Contact Section Styles */
+#contact {
+    background-color: #333;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+/* Border X get width  */
+div.borderXwidth a:before, div.borderXwidth a:after
+{
+    position: absolute;
+    opacity: 0;
+    width: 0%;
+    height: 2px;
+    content: '';
+    background: #fff;
+    transition: all 0.3s;
+}
+
+div.borderXwidth a:before
+{
+    left: 0px;
+    top: 0px;
+}
+
+div.borderXwidth a:after
+{
+    right: 0px;
+    bottom: 0px;
+}
+
+div.borderXwidth a:hover:before, div.borderXwidth a:hover:after
+{
+    opacity: 1;
+    width: 100%;
+}
+
+
+/* For Navigation bar */
+#navbar {
+  --navbar-height: 80px;
+  position: fixed;
+  height: var(--navbar-height);
+  background-color: var(--navbar-bg-color);
+  left: 0;
+  right: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+}
+.navbar-item {
+  margin: 0.4em;
+  width: 100%;
+}
+
+.home-link,
+.navbar-link {
+  color: var(--navbar-text-color);
+  text-decoration: none;
+  display: flex;
+  font-weight: 800;
+  font-size: 20px;
+  align-items: center;
+}
+
+.home-link:is(:focus, :hover) {
+  color: var(--navbar-text-color-focus);
+}
+
+.navbar-link {
+  justify-content: center;
+  width: 100%;
+  padding: 0.4em 0.8em;
+  border-radius: 5px;
+}
+
+.navbar-link:is(:focus, :hover) {
+  color: var(--navbar-text-color-focus);
+  background-color: var(--navbar-bg-contrast);
+}
+
+#navbar-toggle {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.icon-bar {
+  display: block;
+  width: 25px;
+  height: 4px;
+  margin: 2px;
+  background-color: var(--navbar-text-color);
+}
+#navbar-toggle:is(:focus, :hover) .icon-bar {
+  background-color: var(--navbar-text-color-focus);
+}
+#navbar-toggle[aria-expanded="true"] .icon-bar:is(:first-child, :last-child) {
+  position: absolute;
+  margin: 0;
+  width: 40px;
+}
+#navbar-toggle[aria-expanded="true"] .icon-bar:first-child {
+  transform: rotate(45deg);
+}
+#navbar-toggle[aria-expanded="true"] .icon-bar:nth-child(2) {
+  opacity: 0;
+}
+#navbar-toggle[aria-expanded="true"] .icon-bar:last-child {
+  transform: rotate(-45deg);
+}
+#navbar-menu {
+  position: fixed;
+  top: var(--navbar-height);
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  left: 0;
+  right: 0;
+}
+#navbar-toggle[aria-expanded="true"] + #navbar-menu {
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 1;
+  visibility: visible;
+}
+.navbar-links {
+  list-style: none;
+  position: absolute;
+  background-color: var(--navbar-bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 0;
+  right: 0;
+  margin: 1.4rem;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+#navbar-toggle[aria-expanded="true"] + #navbar-menu .navbar-links {
+  padding: 1em;
+}
+@media screen and (min-width: 700px) {
+  #navbar-toggle,
+  #navbar-toggle[aria-expanded="true"] {
+    display: none;
+  }
+
+  #navbar-menu,
+  #navbar-toggle[aria-expanded="true"] #navbar-menu {
+    visibility: visible;
+    opacity: 1;
+    position: static;
+    display: block;
+    height: 100%;
+  }
+
+  .navbar-links,
+  #navbar-toggle[aria-expanded="true"] #navbar-menu .navbar-links {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    position: static;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Cursor typing effect */
+.container p span.typed-text {
+  font-weight: bold;
+  color: #de6161;
+}
+.container p span.cursor {
+  display: inline-block;
+  background-color: #ccc;
+  margin-left: 0.1rem;
+  width: 3px;
+  animation: blink 1s infinite;
+}
+.container p span.cursor.typing {
+  animation: none;
+}
+@keyframes blink {
+  0%  { background-color: #ccc; }
+  49% { background-color: #ccc; }
+  50% { background-color: transparent; }
+  99% { background-color: transparent; }
+  100%  { background-color: #ccc; }
+}
